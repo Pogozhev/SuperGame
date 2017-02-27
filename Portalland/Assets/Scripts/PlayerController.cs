@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.C))
         {
-            rb.velocity = new Vector2(rb.velocity.x * 0.5f, climb * ClimbSpeed);
+            rb.velocity = new Vector2(move * ClimbSpeed, climb * ClimbSpeed);
 
             if ((climb) == -0.0f)
             {
