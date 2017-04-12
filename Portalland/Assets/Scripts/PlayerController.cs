@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool Grounded;
     //private bool LadderEnter = false;
-    private bool boxEnter = false;
+    private bool stopFlip = false;
 
     public Rigidbody2D Rb
     {
@@ -31,16 +31,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool BoxEnter
+    public bool StopFlip
     {
         get
         {
-            return boxEnter;
+            return stopFlip;
         }
 
         set
         {
-            boxEnter = value;
+            stopFlip = value;
         }
     }
 
@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
 
         //Поворот персонажа
 
-        if (Rb.velocity.x > 0 & rotated & !BoxEnter) Flip();
-        else if (Rb.velocity.x < 0 & !rotated & !BoxEnter) Flip();
+        if (Rb.velocity.x > 0 & rotated & !StopFlip) Flip();
+        else if (Rb.velocity.x < 0 & !rotated & !StopFlip) Flip();
     }
 
     private void Update()

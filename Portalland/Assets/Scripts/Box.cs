@@ -36,7 +36,7 @@ public class Box : MonoBehaviour
         if (collision.tag == "Hand")
         {
             BoxEnter = true;
-            playerController.BoxEnter = true;
+            playerController.StopFlip = true;
         }
     }
 
@@ -46,7 +46,7 @@ public class Box : MonoBehaviour
         if (collision.tag == "Hand")
         {
             BoxEnter = false;
-            playerController.BoxEnter = false;
+            playerController.StopFlip = false;
         }
     }
 }
