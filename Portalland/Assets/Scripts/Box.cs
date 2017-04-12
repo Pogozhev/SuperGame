@@ -5,6 +5,8 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
 
+    //Пока нигде не используется и наверное не будет
+
     private Rigidbody2D rbBox;
     private GameObject Player;
     private bool BoxEnter = false;
