@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float Speed;
     public float JumpForce;
-    public Transform Checker1; /* Берем коллайдер GroundChekcerа */
+    public Transform Checker1; /* Берем позицию GroundChekcerа */
     public Transform Checker2;
     public LayerMask GroundLayers; /* Слои с "Землёй" */
     //public float ClimbSpeed;

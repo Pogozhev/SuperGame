@@ -47,6 +47,11 @@ public class RoupeClimb : MonoBehaviour
         {
             StartCoroutine(climb());           
         }
+
+        if(!climbing)
+        {
+            playerController.StopFlip = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,7 +71,7 @@ public class RoupeClimb : MonoBehaviour
         for (int i = 0; i < Points.Length; i++)
         {
             react = false;         
-            yield return new WaitForSeconds(Random.Range(0.5f, 1));
+            yield return new WaitForSeconds(Random.Range(1, 2));
                 if (react)
                 {
                     player.transform.position = Points[i].position;
@@ -95,23 +100,23 @@ public class RoupeClimb : MonoBehaviour
         while(true)
         {
             DrawA = true;       
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 DrawA = false;
                 while(true)
                 {
                     DrawB = true;                 
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKeyDown(KeyCode.D))
                     {
                         DrawB = false;
                         react = true;
                         break;
                     }
                     yield return null;              
-                }                                          
-            }   
+                }
+            }
             yield return null;                   
-        }                   
+        }
     }
 
     private void OnGUI()
